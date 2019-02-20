@@ -23,11 +23,20 @@ const generateConfig = env => {
 
   let cssLoader = [
     {
+      loader: "style-loader",
+      options: {
+        singleton: true // 处理为单个style标签
+      }
+    },
+    {
       loader: "css-loader",
       options: {
         minimize: true,
         sourceMap: env === "development" ? true : false // 开发环境：开启source-map
       }
+    },
+    {
+      loader: "sass-loader" // 将 Sass 编译成 CSS
     }
   ];
 
@@ -54,19 +63,13 @@ const generateConfig = env => {
     module: {
       rules: [
         { test: /\.js$/, exclude: /(node_modules)/, use: scriptLoader },
-        { test: /\.css$/, use: styleLoader }
+        { test: /\.css$/, use: styleLoader },
+        { test: /\.scss$/, use: styleLoader }
       ]
     },
     plugins: [
       // 开发环境和生产环境二者均需要的插件
-      new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: path.resolve(__dirname, "..", "index.html"),
-        chunks: ["app"],
-        minify: {
-          collapseWhitespace: true
-        }
-      }),
+      new HtmlWebpackPlugin(),
       new webpack.ProvidePlugin({ $: "jquery" })
     ]
   };

@@ -10,6 +10,10 @@
     "postcss-sprites": "^4.2.1",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
-    "webpack": "^4.16.1"
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.2.1"
+  },
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
   }
 }

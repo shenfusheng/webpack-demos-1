@@ -1,8 +1,12 @@
 {
   "devDependencies": {
-    "webpack": "^4.15.1"
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.2.1"
   },
   "dependencies": {
     "lodash": "^4.17.10"
+  },
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
   }
 }

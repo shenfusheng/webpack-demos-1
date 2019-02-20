@@ -1,4 +1,15 @@
 {
+  "name": "sfs-npm-test",
+  "version": "1.0.1",
+  "description": "npm包开发测试",
+  "main": "app.js",
+  "repository": "",
+  "keywords": [
+    "sfs",
+    "npm-test"
+  ],
+  "author": "sfs",
+  "license": "ISC",
   "scripts": {
     "dev": "webpack-dev-server --env development --open --config build/webpack.common.conf.js",
     "build": "webpack --env production --config build/webpack.common.conf.js"
@@ -12,8 +23,9 @@
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
-    "jquery": "^3.3.1",
     "style-loader": "^0.21.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.4",
@@ -21,6 +33,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "jquery": "^3.3.1",
+    "shenfusheng-npm-test": "^1.0.1"
   }
 }
